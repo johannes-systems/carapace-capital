@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Carapace Capital Ltd</title>
+  <meta name="robots" content="noindex, follow">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-alt: #f6f9fc;
+      --bg-dark: #1c1e54;
+      --fg: #061b31;
+      --fg-on-dark: #ffffff;
+      --label: #273951;
+      --muted: #64748d;
+      --muted-on-dark: rgba(255, 255, 255, 0.72);
+      --border: #e5edf5;
+      --border-strong: #dde6f0;
+      --accent: #533afd;
+      --accent-hover: #4434d4;
+      --font-display: 'sohne-var', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --font-body: 'sohne-var', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --font-mono: 'SourceCodePro', 'SFMono-Regular', ui-monospace, 'Menlo', monospace;
+      --shell-max: 1080px;
+      --shell-pad: 32px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--label);
+      font-family: var(--font-body);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.55;
+      font-feature-settings: "ss01";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color .12s ease;
+    }
+    a:hover { color: var(--accent-hover); }
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+    .shell {
+      max-width: var(--shell-max);
+      margin: 0 auto;
+      padding-inline: var(--shell-pad);
+    }
+    .site-header {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .site-header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-block: 22px;
+    }
+    .wordmark {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: -0.005em;
+      color: var(--fg);
+      text-decoration: none;
+      font-feature-settings: "ss01";
+    }
+    .wordmark:hover { color: var(--fg); }
+    .header-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .header-link:hover { color: var(--fg); }
+    @media (max-width: 560px) { .header-link { display: none; } }
+    .site-footer {
+      border-top: 1px solid var(--border);
+      margin-top: 80px;
+    }
+    .site-footer__inner {
+      padding-block: 28px 48px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .site-footer p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.005em;
+    }
+    .site-footer nav { display: flex; gap: 22px; }
+    .site-footer nav a {
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+    }
+    .site-footer nav a:hover {
+      color: var(--fg);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Legal page layout */
+    .legal-page {
+      padding-block: 64px 0;
+    }
+    .legal-page__header {
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 48px;
+    }
+    .legal-page__kicker {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+      font-feature-settings: "ss01";
+    }
+    .legal-page__title {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.1;
+      letter-spacing: -0.022em;
+      color: var(--fg);
+      margin: 0 0 16px;
+      font-feature-settings: "ss01";
+    }
+    .legal-page__meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+    .legal-body {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    @media (max-width: 760px) {
+      .legal-body { grid-template-columns: 1fr; gap: 0; }
+    }
+    .legal-toc {
+      position: sticky;
+      top: 32px;
+    }
+    .legal-toc__label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+    .legal-toc ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .legal-toc a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .legal-toc a:hover { color: var(--accent); }
+    @media (max-width: 760px) { .legal-toc { display: none; } }
+    .legal-content h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+      margin: 52px 0 16px;
+      padding-top: 4px;
+      font-feature-settings: "ss01";
+    }
+    .legal-content h2:first-child { margin-top: 0; }
+    .legal-content h3 {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--fg);
+      margin: 28px 0 10px;
+      font-feature-settings: "ss01";
+    }
+    .legal-content p {
+      margin: 0 0 16px;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--label);
+    }
+    .legal-content ul, .legal-content ol {
+      margin: 0 0 16px;
+      padding-left: 24px;
+    }
+    .legal-content li {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--label);
+      margin-bottom: 6px;
+    }
+    .legal-content table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 0 0 24px;
+    }
+    .legal-content th {
+      text-align: left;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 10px 14px;
+      border-bottom: 2px solid var(--border-strong);
+    }
+    .legal-content td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+    .legal-content tr:last-child td { border-bottom: 0; }
+    .legal-callout {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 18px 20px;
+      margin: 0 0 24px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--label);
+    }
+    .legal-callout strong { color: var(--fg); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="wordmark" href="/" aria-label="Carapace, home">Carapace</a>
+      <a class="header-link" href="mailto:privacy@carapace.capital">privacy@carapace.capital</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="legal-page shell">
+      <div class="legal-page__header">
+        <p class="legal-page__kicker">Legal</p>
+        <h1 class="legal-page__title">Privacy Policy</h1>
+        <p class="legal-page__meta">Effective date: 1 May 2026 &nbsp;&middot;&nbsp; Last updated: 11 May 2026</p>
+      </div>
+
+      <div class="legal-body">
+        <nav class="legal-toc" aria-label="Table of contents">
+          <p class="legal-toc__label">Contents</p>
+          <ol>
+            <li><a href="#controller">1. Controller</a></li>
+            <li><a href="#scope">2. Scope</a></li>
+            <li><a href="#data-collected">3. Data We Collect</a></li>
+            <li><a href="#purposes">4. Purposes &amp; Legal Basis</a></li>
+            <li><a href="#social-media">5. Social Media API Data</a></li>
+            <li><a href="#payments">6. Payments</a></li>
+            <li><a href="#sharing">7. Data Sharing</a></li>
+            <li><a href="#transfers">8. International Transfers</a></li>
+            <li><a href="#retention">9. Retention</a></li>
+            <li><a href="#rights">10. Your Rights</a></li>
+            <li><a href="#minors">11. Minors</a></li>
+            <li><a href="#cookies">12. Cookies</a></li>
+            <li><a href="#security">13. Security</a></li>
+            <li><a href="#changes">14. Changes</a></li>
+            <li><a href="#contact">15. Contact</a></li>
+          </ol>
+        </nav>
+
+        <div class="legal-content">
+          <div class="legal-callout">
+            <strong>Short version:</strong> Carapace Capital Ltd operates BotOffice, a social media scheduling service. We collect what's needed to run the service, store OAuth tokens encrypted, never sell your data, and will delete everything on request. For questions: <a href="mailto:privacy@carapace.capital">privacy@carapace.capital</a>.
+          </div>
+
+          <h2 id="controller">1. Data Controller</h2>
+          <p>The data controller for all processing described in this policy is:</p>
+          <p>
+            <strong>Carapace Capital Ltd</strong><br>
+            Company registration: HE 483413<br>
+            Jurisdiction: Republic of Cyprus (European Union)<br>
+            Contact: <a href="mailto:privacy@carapace.capital">privacy@carapace.capital</a>
+          </p>
+          <p>References to "Carapace", "we", "us", or "our" in this policy all refer to Carapace Capital Ltd.</p>
+
+          <h2 id="scope">2. Scope of This Policy</h2>
+          <p>This policy applies to personal data processed through:</p>
+          <ul>
+            <li><strong>carapace.capital</strong> — this website</li>
+            <li><strong>post.botoffice.io</strong> — the BotOffice social media post scheduler, a self-hosted instance of the Postiz open-source platform operated by Carapace</li>
+            <li>Any other Carapace products or services that link to this policy</li>
+          </ul>
+          <p>It does not apply to third-party platforms (such as Meta, X, LinkedIn) that you connect to through our service. Those platforms process your data under their own privacy policies.</p>
+
+          <h2 id="data-collected">3. Data We Collect</h2>
+
+          <h3>Account data</h3>
+          <p>When you register for BotOffice, we collect your email address and a hashed password. If you are onboarded by an administrator, we may also store your name as provided during the invitation process.</p>
+
+          <h3>Connected social media accounts</h3>
+          <p>When you authorise BotOffice to publish on your behalf, we receive and store:</p>
+          <ul>
+            <li>OAuth access tokens and (where issued) refresh tokens — stored encrypted at rest using AES-256</li>
+            <li>Platform-issued account identifiers (page IDs, profile IDs, channel IDs)</li>
+            <li>Display names and profile pictures as returned by the platform API, used solely for account identification within the app</li>
+          </ul>
+
+          <h3>Content and media</h3>
+          <p>Post content (text, images, video) that you upload or schedule through the service is stored temporarily until the scheduled publication date and for a reasonable period afterwards for audit purposes.</p>
+
+          <h3>Usage data</h3>
+          <p>We collect standard server logs (IP address, request timestamps, HTTP method and URL, user-agent string) to maintain service security and diagnose errors. Logs are retained for a maximum of 30 days.</p>
+
+          <h3>Payment data</h3>
+          <p>If you subscribe to a paid plan, payment processing is handled by Stripe, Inc. We receive a customer identifier and subscription status from Stripe but do not store your full card number, CVV, or bank account details. See <a href="#payments">Section 6</a>.</p>
+
+          <h2 id="purposes">4. Purposes and Legal Basis for Processing</h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Purpose</th>
+                <th>Legal basis (GDPR Art. 6)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Providing the scheduling service — authenticating you, storing your connected accounts, and publishing posts on your behalf</td>
+                <td>Performance of a contract (Art. 6(1)(b))</td>
+              </tr>
+              <tr>
+                <td>Sending transactional emails (account invitations, password resets, scheduling confirmations)</td>
+                <td>Performance of a contract (Art. 6(1)(b))</td>
+              </tr>
+              <tr>
+                <td>Security logging and fraud prevention</td>
+                <td>Legitimate interests (Art. 6(1)(f)) — maintaining service integrity</td>
+              </tr>
+              <tr>
+                <td>Billing and subscription management</td>
+                <td>Performance of a contract / Legal obligation (Art. 6(1)(b)(c))</td>
+              </tr>
+              <tr>
+                <td>Compliance with legal obligations (e.g., data subject requests, regulatory requirements)</td>
+                <td>Legal obligation (Art. 6(1)(c))</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>We do not use your data for advertising, profiling, or any purpose not listed above.</p>
+
+          <h2 id="social-media">5. Social Media Platform and API Data</h2>
+          <p>BotOffice connects to social media platforms on your behalf using official platform APIs. The platforms we currently support include: Meta (Facebook Pages and Instagram Business), X (formerly Twitter), LinkedIn, TikTok, YouTube, Pinterest, Reddit, and Bluesky.</p>
+
+          <h3>What we store</h3>
+          <ul>
+            <li><strong>OAuth access tokens</strong> — encrypted at rest (AES-256). Required to publish posts on your behalf.</li>
+            <li><strong>Refresh tokens</strong> — where issued by the platform, to maintain access without requiring you to re-authenticate. Also encrypted.</li>
+            <li><strong>Account identifiers</strong> — platform-issued IDs for connected pages, profiles, and channels.</li>
+            <li><strong>Scheduled post content</strong> — text and media you upload for future publication.</li>
+          </ul>
+
+          <h3>What we do not do</h3>
+          <ul>
+            <li>We do not share your OAuth tokens or social media account data with any third party beyond what is technically required to fulfil the publishing service (i.e., making the API call to the relevant platform on your behalf).</li>
+            <li>We do not use your connected social media accounts or their data for advertising, profiling, analytics resale, or any purpose other than delivering the scheduling service you requested.</li>
+            <li>We do not read, store, or analyse content from your social media timelines, followers, or messages beyond what you explicitly schedule through our interface.</li>
+          </ul>
+
+          <h3>Token lifecycle</h3>
+          <p>OAuth tokens are subject to each platform's own expiration policy. When a token expires, you will be prompted to re-authenticate. Tokens are permanently and irreversibly deleted when you disconnect the associated account through the app, or when you request account deletion.</p>
+
+          <h3>Platform terms</h3>
+          <p>Use of connected social media platforms through BotOffice is also governed by each platform's own terms of service and developer policies. By connecting a platform account you confirm you are authorised to do so.</p>
+
+          <h2 id="payments">6. Payments</h2>
+          <p>Payments for paid plans are processed by <strong>Stripe, Inc.</strong> (1 Global Payments, Dublin, Ireland / San Francisco, CA). When you subscribe, you are directed to Stripe's hosted payment interface. Stripe is certified to PCI DSS Level 1.</p>
+          <p>We store from Stripe: your Stripe Customer ID, subscription plan and status, and billing history (invoice amount and date). We do not store or process raw card data.</p>
+          <p>Stripe's privacy policy is available at <a href="https://stripe.com/privacy" rel="noopener noreferrer">stripe.com/privacy</a>.</p>
+
+          <h2 id="sharing">7. Data Sharing</h2>
+          <p>We share personal data only in the following circumstances:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Recipient</th>
+                <th>Purpose</th>
+                <th>Safeguard</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Social media platforms (Meta, X, LinkedIn, TikTok, YouTube, Pinterest, Reddit, Bluesky)</td>
+                <td>Publishing posts on your behalf via official APIs</td>
+                <td>Only your OAuth token and post content are transmitted; platforms' own developer agreements apply</td>
+              </tr>
+              <tr>
+                <td>Stripe, Inc.</td>
+                <td>Payment processing</td>
+                <td>Standard Contractual Clauses (SCCs); PCI DSS Level 1</td>
+              </tr>
+              <tr>
+                <td>Resend, Inc.</td>
+                <td>Transactional email delivery (invitations, password resets)</td>
+                <td>Data Processing Agreement; email addresses only</td>
+              </tr>
+              <tr>
+                <td>Hetzner Online GmbH</td>
+                <td>Cloud hosting (server located in Falkenstein, Germany, EU)</td>
+                <td>EU-based; GDPR-compliant hosting contract</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>We do not sell personal data. We do not share data with data brokers, advertising networks, or analytics providers.</p>
+
+          <h2 id="transfers">8. International Data Transfers</h2>
+          <p>Our primary server infrastructure is hosted at Hetzner Online GmbH in Germany (EU/EEA). Some of our sub-processors — including Stripe and Resend — are headquartered in the United States.</p>
+          <p>For transfers of personal data from the EU/EEA to the United States or other third countries, we rely on <strong>Standard Contractual Clauses (SCCs)</strong> as approved by the European Commission under GDPR Article 46(2)(c), and where applicable on the EU–US Data Privacy Framework.</p>
+          <p>You may request a copy of the relevant transfer safeguards by contacting us at <a href="mailto:privacy@carapace.capital">privacy@carapace.capital</a>.</p>
+
+          <h2 id="retention">9. Data Retention</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Data type</th>
+                <th>Retention period</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Account data (email, hashed password)</td>
+                <td>Duration of active account + 30 days after deletion request</td>
+              </tr>
+              <tr>
+                <td>OAuth tokens and social account identifiers</td>
+                <td>Until account disconnection or deletion request — then permanently deleted</td>
+              </tr>
+              <tr>
+                <td>Scheduled post content and media</td>
+                <td>Until published + 90 days, or until account deletion</td>
+              </tr>
+              <tr>
+                <td>Server access logs</td>
+                <td>30 days maximum</td>
+              </tr>
+              <tr>
+                <td>Billing records</td>
+                <td>7 years (legal accounting obligation under Cyprus law)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="rights">10. Your Privacy Rights</h2>
+
+          <h3>Rights under GDPR (EU/EEA residents)</h3>
+          <p>You have the following rights under the General Data Protection Regulation:</p>
+          <ul>
+            <li><strong>Right to access (Art. 15)</strong> — request a copy of the personal data we hold about you</li>
+            <li><strong>Right to rectification (Art. 16)</strong> — request correction of inaccurate data</li>
+            <li><strong>Right to erasure (Art. 17)</strong> — request deletion of your data</li>
+            <li><strong>Right to restriction of processing (Art. 18)</strong> — request that we limit how we use your data</li>
+            <li><strong>Right to data portability (Art. 20)</strong> — receive your data in a structured, machine-readable format</li>
+            <li><strong>Right to object (Art. 21)</strong> — object to processing based on legitimate interests</li>
+            <li><strong>Right to withdraw consent</strong> — where processing is based on consent, you may withdraw at any time without affecting prior processing</li>
+          </ul>
+          <p>To exercise any of these rights, contact us at <a href="mailto:privacy@carapace.capital">privacy@carapace.capital</a>. We will respond within 30 days. You also have the right to lodge a complaint with your local supervisory authority; in Cyprus this is the <a href="https://www.dataprotection.gov.cy" rel="noopener noreferrer">Office of the Commissioner for Personal Data Protection</a>.</p>
+
+          <h3>Rights under CCPA/CPRA (California residents)</h3>
+          <p>If you are a California resident, you have the following rights under the California Consumer Privacy Act:</p>
+          <ul>
+            <li><strong>Right to know</strong> — request disclosure of the categories and specific pieces of personal information we collect, use, and share</li>
+            <li><strong>Right to delete</strong> — request deletion of your personal information</li>
+            <li><strong>Right to correct</strong> — request correction of inaccurate personal information</li>
+            <li><strong>Right to opt-out of sale or sharing</strong> — we do not sell or share personal information for cross-context behavioural advertising</li>
+            <li><strong>Right to non-discrimination</strong> — we will not discriminate against you for exercising your privacy rights</li>
+          </ul>
+          <p>To submit a CCPA request, email <a href="mailto:privacy@carapace.capital">privacy@carapace.capital</a> with "CCPA Request" in the subject line. We will respond within 45 days.</p>
+
+          <h2 id="minors">11. Minors</h2>
+          <p>BotOffice is a business-to-business service and is not directed at individuals under the age of 16. We do not knowingly collect personal data from anyone under 16. If you believe we have inadvertently collected data from a minor, please contact us at <a href="mailto:privacy@carapace.capital">privacy@carapace.capital</a> and we will promptly delete it.</p>
+
+          <h2 id="cookies">12. Cookies and Tracking</h2>
+          <p>Our website (carapace.capital) does not use tracking cookies, analytics scripts, or advertising pixels. We do not use any third-party analytics services on this site.</p>
+          <p>The BotOffice application (post.botoffice.io) uses a single session cookie required for authentication. This cookie is strictly necessary for the service to function and does not track you across other sites.</p>
+
+          <h2 id="security">13. Security</h2>
+          <p>We implement industry-standard security measures including:</p>
+          <ul>
+            <li>TLS encryption in transit for all connections (enforced by Caddy reverse proxy)</li>
+            <li>AES-256 encryption at rest for OAuth tokens</li>
+            <li>Bcrypt password hashing</li>
+            <li>Network isolation — the application server is not directly accessible from the public internet except via the TLS proxy</li>
+            <li>Regular dependency updates</li>
+          </ul>
+          <p>No method of transmission or storage is 100% secure. If you believe you have found a security vulnerability, please disclose it responsibly to <a href="mailto:privacy@carapace.capital">privacy@carapace.capital</a>.</p>
+
+          <h2 id="changes">14. Changes to This Policy</h2>
+          <p>We may update this policy from time to time. If we make material changes, we will update the "Last updated" date at the top of this page and, where required by law, notify you by email. Continued use of the service after the effective date of an update constitutes acceptance of the updated policy.</p>
+          <p>Previous versions of this policy are available on request.</p>
+
+          <h2 id="contact">15. Contact Us</h2>
+          <p>For any privacy-related questions, data subject requests, or complaints:</p>
+          <p>
+            <strong>Carapace Capital Ltd</strong><br>
+            Email: <a href="mailto:privacy@carapace.capital">privacy@carapace.capital</a>
+          </p>
+          <p>For account deletion and social media token removal, you may also visit: <a href="/legal/data-deletion/">carapace.capital/legal/data-deletion/</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <p>&copy; 2026 Carapace Capital Ltd</p>
+      <nav aria-label="Legal">
+        <a href="/privacy.html" aria-current="page">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/imprint.html">Imprint</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

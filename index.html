@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carapace Capital Ltd</title>
+  <meta name="description" content="Carapace is a company for software startups. Some of it is ours. Some of it we built for partners.">
+  <meta name="color-scheme" content="light">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-alt: #f6f9fc;
+      --bg-dark: #1c1e54;
+      --fg: #061b31;
+      --fg-on-dark: #ffffff;
+      --label: #273951;
+      --muted: #64748d;
+      --muted-on-dark: rgba(255, 255, 255, 0.72);
+      --border: #e5edf5;
+      --border-strong: #dde6f0;
+      --accent: #533afd;
+      --accent-hover: #4434d4;
+      --shadow-card:
+        rgba(50, 50, 93, 0.20) 0px 30px 45px -30px,
+        rgba(0, 0, 0, 0.08) 0px 18px 36px -18px;
+      --shadow-card-hover:
+        rgba(50, 50, 93, 0.28) 0px 50px 65px -30px,
+        rgba(0, 0, 0, 0.10) 0px 24px 42px -18px;
+      --shadow-cta:
+        rgba(50, 50, 93, 0.18) 0px 12px 22px -14px,
+        rgba(0, 0, 0, 0.06) 0px 6px 14px -8px;
+      --font-display: 'sohne-var', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --font-body: 'sohne-var', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --font-mono: 'SourceCodePro', 'SFMono-Regular', ui-monospace, 'Menlo', monospace;
+      --shell-max: 1080px;
+      --shell-pad: 32px;
+      --col-aside: 220px;
+      --col-gap: 64px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--label);
+      font-family: var(--font-body);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.55;
+      font-feature-settings: "ss01";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color .12s ease;
+    }
+    a:hover { color: var(--accent-hover); }
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+    .shell {
+      max-width: var(--shell-max);
+      margin: 0 auto;
+      padding-inline: var(--shell-pad);
+    }
+    .site-header {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .site-header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-block: 22px;
+    }
+    .wordmark {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: -0.005em;
+      color: var(--fg);
+      text-decoration: none;
+      font-feature-settings: "ss01";
+    }
+    .wordmark:hover { color: var(--fg); }
+    .header-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .header-link:hover { color: var(--fg); }
+    @media (max-width: 560px) { .header-link { display: none; } }
+    .hero { padding-block: 96px 80px; }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(34px, 5.6vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: var(--fg);
+      margin: 0;
+      max-width: 18ch;
+      text-wrap: balance;
+      font-feature-settings: "ss01";
+    }
+    .hero__deck {
+      margin: 20px 0 0;
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.4;
+      color: var(--label);
+      max-width: 36ch;
+      letter-spacing: -0.005em;
+      font-feature-settings: "ss01";
+    }
+    .block {
+      border-top: 1px solid var(--border);
+      padding-block: 64px;
+    }
+    .block--dark {
+      background: var(--bg-dark);
+      border-top: 0;
+      color: var(--fg-on-dark);
+      padding-block: 88px;
+    }
+    .block--dark + .block { border-top: 0; }
+    .block__grid {
+      display: grid;
+      grid-template-columns: var(--col-aside) 1fr;
+      gap: var(--col-gap);
+      align-items: start;
+    }
+    @media (max-width: 760px) {
+      .block { padding-block: 48px; }
+      .block--dark { padding-block: 64px; }
+      .block__grid { grid-template-columns: 1fr; gap: 20px; }
+    }
+    .kicker {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0;
+      font-feature-settings: "ss01";
+    }
+    .kicker--on-dark { color: var(--muted-on-dark); }
+    .kicker--stacked { margin-bottom: 32px; }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+    @media (max-width: 980px) { .products { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .products { grid-template-columns: 1fr; } }
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 26px 26px 28px;
+      box-shadow: var(--shadow-card);
+      transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+    }
+    .product-card:hover {
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-2px);
+      border-color: var(--border-strong);
+    }
+    .product-card__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 0 0 6px;
+    }
+    .product-card__name {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 21px;
+      letter-spacing: -0.012em;
+      color: var(--fg);
+      margin: 0;
+      font-feature-settings: "ss01";
+    }
+    .product-card__meta {
+      margin: 0 0 14px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0;
+      word-break: break-word;
+    }
+    .product-card__meta a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1px;
+      transition: color .12s ease, border-color .12s ease;
+    }
+    .product-card__meta a:hover {
+      color: var(--fg);
+      border-bottom-color: var(--border-strong);
+    }
+    .product-card__body {
+      margin: 0;
+      color: var(--label);
+      font-size: 15px;
+      line-height: 1.5;
+      font-feature-settings: "ss01";
+    }
+    .product-card__metrics {
+      margin: 18px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .product-card__metrics > div {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .product-card__metrics dt {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: 22px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--fg);
+      font-variant-numeric: tabular-nums;
+      font-feature-settings: "ss01", "tnum";
+    }
+    .product-card__metrics dd {
+      margin: 0;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.005em;
+      line-height: 1.4;
+      font-feature-settings: "ss01";
+    }
+    .badge {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--bg-alt);
+      color: var(--label);
+      border: 1px solid var(--border);
+      font-feature-settings: "ss01";
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .company-data {
+      margin: 0;
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      column-gap: 48px;
+      row-gap: 14px;
+      max-width: 540px;
+    }
+    .company-data dt {
+      color: var(--muted-on-dark);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.005em;
+      font-feature-settings: "ss01";
+    }
+    .company-data dd {
+      color: var(--fg-on-dark);
+      font-weight: 500;
+      font-size: 15px;
+      margin: 0;
+      font-variant-numeric: tabular-nums;
+      font-feature-settings: "ss01", "tnum";
+      letter-spacing: -0.005em;
+    }
+    @media (max-width: 560px) {
+      .company-data { grid-template-columns: 1fr; row-gap: 0; }
+      .company-data dt { margin-top: 14px; font-size: 12px; }
+    }
+    .contact-cta {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 16px;
+      color: #ffffff;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      padding: 10px 18px;
+      text-decoration: none;
+      box-shadow: var(--shadow-cta);
+      transition: background .15s ease, border-color .15s ease, transform .18s ease, box-shadow .18s ease;
+      font-feature-settings: "ss01";
+    }
+    .contact-cta:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+      color: #ffffff;
+      box-shadow: var(--shadow-card);
+      transform: translateY(-1px);
+    }
+    .site-footer {
+      border-top: 1px solid var(--border);
+      margin-top: 80px;
+    }
+    .site-footer__inner {
+      padding-block: 28px 48px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .site-footer p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.005em;
+    }
+    .site-footer nav { display: flex; gap: 22px; }
+    .site-footer nav a {
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+    }
+    .site-footer nav a:hover {
+      color: var(--fg);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="wordmark" href="/" aria-label="Carapace, home">Carapace</a>
+      <a class="header-link" href="mailto:hello@carapace.capital">hello@carapace.capital</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell">
+        <h1>Carapace is a company for software startups.</h1>
+        <p class="hero__deck">Some of it is ours. Some of it we built for partners.</p>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="our-products">
+      <div class="shell">
+        <p id="our-products" class="kicker kicker--stacked">Our products</p>
+        <div class="products">
+          <article class="product-card">
+            <div class="product-card__head">
+              <h3 class="product-card__name">BotOffice</h3>
+              <span class="badge">Launching soon</span>
+            </div>
+            <p class="product-card__meta"><a href="https://botoffice.io" rel="noopener">botoffice.io</a></p>
+            <p class="product-card__body">Agentic AI teams that handle office work for solo operators and small teams. Telegram-based, learns the business over time.</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__head">
+              <h3 class="product-card__name">Sternseite</h3>
+              <span class="badge">Pre-launch</span>
+            </div>
+            <p class="product-card__meta">sternseite.de</p>
+            <p class="product-card__body">Turns Google reviews into one-pager websites for businesses that don't have one yet.</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__head">
+              <h3 class="product-card__name">Voice Agent</h3>
+              <span class="badge">In development</span>
+            </div>
+            <p class="product-card__meta">No site yet</p>
+            <p class="product-card__body">Outbound and inbound calling assistant.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="partner-work">
+      <div class="shell">
+        <p id="partner-work" class="kicker kicker--stacked">Partner work</p>
+        <div class="products">
+          <article class="product-card">
+            <div class="product-card__head">
+              <h3 class="product-card__name">Audio Empire</h3>
+              <span class="badge">Live</span>
+            </div>
+            <p class="product-card__meta"><a href="https://audioempire.ai" rel="noopener">audioempire.ai</a> · Saleway GmbH</p>
+            <p class="product-card__body">One of the main developers. Built the AI generation systems and most of the wizard-flow UI.</p>
+            <dl class="product-card__metrics">
+              <div>
+                <dt>$1M+</dt>
+                <dd>revenue in first weeks</dd>
+              </div>
+              <div>
+                <dt>1,000+</dt>
+                <dd>active users</dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__head">
+              <h3 class="product-card__name">ContentEmpire</h3>
+              <span class="badge">Launching soon</span>
+            </div>
+            <p class="product-card__meta"><a href="https://contentempire.ai" rel="noopener">contentempire.ai</a> · Ralf Schmitz</p>
+            <p class="product-card__body">Built solo from scratch. Launching to Ralf's community.</p>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__head">
+              <h3 class="product-card__name">Gadgetshouse</h3>
+              <span class="badge">Ongoing</span>
+            </div>
+            <p class="product-card__meta"><a href="https://gadgetshouse.com.cy" rel="noopener">gadgetshouse.com.cy</a></p>
+            <p class="product-card__body">SEO and social-media operations for a Cyprus electronics retailer.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block block--dark" aria-labelledby="company">
+      <div class="shell block__grid">
+        <p id="company" class="kicker kicker--on-dark">Company</p>
+        <dl class="company-data">
+          <dt>Legal name</dt>
+          <dd>Carapace Capital Ltd</dd>
+          <dt>Jurisdiction</dt>
+          <dd>Cyprus</dd>
+          <dt>Company registration</dt>
+          <dd>HE 483413</dd>
+          <dt>Director</dt>
+          <dd>Johannes Buerger</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="contact">
+      <div class="shell block__grid">
+        <p id="contact" class="kicker">Contact</p>
+        <div>
+          <a class="contact-cta" href="mailto:hello@carapace.capital">hello@carapace.capital</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <p>&copy; 2026 Carapace Capital Ltd</p>
+      <nav aria-label="Legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="imprint.html">Imprint</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
