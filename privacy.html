@@ -407,6 +407,15 @@
           <h3>Platform terms</h3>
           <p>Use of connected social media platforms through BotOffice is also governed by each platform's own terms of service and developer policies. By connecting a platform account you confirm you are authorised to do so.</p>
 
+          <h3>YouTube API Services</h3>
+          <p>This application uses YouTube API Services. By connecting your YouTube account, you agree to be bound by the <a href="https://www.youtube.com/t/terms" rel="noopener noreferrer">YouTube Terms of Service</a>. Our use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener noreferrer">Google API Services User Data Policy</a>. For information on how Google collects and processes data, see the <a href="http://www.google.com/policies/privacy" rel="noopener noreferrer">Google Privacy Policy</a>.</p>
+
+          <h3>Limited use of YouTube data</h3>
+          <p>We only use YouTube user data to provide the scheduling and publishing service you have requested. We do not use YouTube data for advertising, profiling, or any purpose beyond what is described in this policy.</p>
+
+          <h3>Revoking YouTube access</h3>
+          <p>You can revoke BotOffice's access to your YouTube account at any time via your <a href="https://security.google.com/settings/security/permissions" rel="noopener noreferrer">Google Security Settings</a>. Upon revocation, we will delete all associated YouTube data within 30 calendar days.</p>
+
           <h2 id="payments">6. Payments</h2>
           <p>Payments for paid plans are processed by <strong>Stripe, Inc.</strong> (1 Global Payments, Dublin, Ireland / San Francisco, CA). When you subscribe, you are directed to Stripe's hosted payment interface. Stripe is certified to PCI DSS Level 1.</p>
           <p>We store from Stripe: your Stripe Customer ID, subscription plan and status, and billing history (invoice amount and date). We do not store or process raw card data.</p>
@@ -472,8 +481,12 @@
                 <td>Until account disconnection or deletion request — then permanently deleted</td>
               </tr>
               <tr>
-                <td>Scheduled post content and media</td>
+                <td>User-supplied post content and media (text, images, video you upload or write)</td>
                 <td>Until published + 90 days, or until account deletion</td>
+              </tr>
+              <tr>
+                <td>YouTube API data (channel identifiers, video metadata, analytics)</td>
+                <td>30 days maximum; deleted promptly upon account disconnection or access revocation</td>
               </tr>
               <tr>
                 <td>Server access logs</td>
