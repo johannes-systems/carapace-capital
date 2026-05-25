@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BotOffice for Google Ads — Carapace Capital Ltd</title>
+  <meta name="description" content="BotOffice is a platform from Carapace Capital with Google Ads management capabilities. Manage your own and your clients' Google Ads accounts in one place, with a private AI assistant.">
+  <meta name="color-scheme" content="light">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-alt: #f6f9fc;
+      --bg-dark: #1c1e54;
+      --fg: #061b31;
+      --fg-on-dark: #ffffff;
+      --label: #273951;
+      --muted: #64748d;
+      --muted-on-dark: rgba(255, 255, 255, 0.72);
+      --border: #e5edf5;
+      --border-strong: #dde6f0;
+      --accent: #533afd;
+      --accent-hover: #4434d4;
+      --shadow-card: rgba(50, 50, 93, 0.20) 0px 30px 45px -30px, rgba(0, 0, 0, 0.08) 0px 18px 36px -18px;
+      --shadow-cta: rgba(50, 50, 93, 0.18) 0px 12px 22px -14px, rgba(0, 0, 0, 0.06) 0px 6px 14px -8px;
+      --font-display: 'sohne-var', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --font-body: 'sohne-var', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --font-mono: 'SourceCodePro', 'SFMono-Regular', ui-monospace, 'Menlo', monospace;
+      --shell-max: 1080px;
+      --shell-pad: 32px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg); color: var(--label);
+      font-family: var(--font-body); font-size: 17px; line-height: 1.55;
+      font-feature-settings: "ss01"; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; transition: color .12s ease; }
+    a:hover { color: var(--accent-hover); }
+    .shell { max-width: var(--shell-max); margin: 0 auto; padding-inline: var(--shell-pad); }
+    .site-header { background: var(--bg); border-bottom: 1px solid var(--border); }
+    .site-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 22px; }
+    .wordmark { font-family: var(--font-display); font-weight: 500; font-size: 18px; letter-spacing: -0.005em; color: var(--fg); text-decoration: none; }
+    .header-link { font-family: var(--font-mono); font-size: 12px; color: var(--muted); text-decoration: none; }
+    .header-link:hover { color: var(--fg); }
+    .hero { padding-block: 84px 16px; }
+    .hero .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; color: var(--accent); margin: 0 0 18px; text-transform: uppercase; }
+    .hero h1 { font-family: var(--font-display); font-weight: 300; font-size: clamp(32px, 5.2vw, 52px); line-height: 1.06; letter-spacing: -0.025em; color: var(--fg); margin: 0; max-width: 20ch; text-wrap: balance; }
+    .hero__deck { margin: 22px 0 0; font-size: clamp(17px, 2vw, 21px); line-height: 1.45; color: var(--label); max-width: 46ch; }
+    .block { border-top: 1px solid var(--border); padding-block: 56px; }
+    .block--dark { background: var(--bg-dark); border-top: 0; color: var(--fg-on-dark); padding-block: 72px; }
+    .kicker { font-weight: 500; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 28px; }
+    .kicker--on-dark { color: var(--muted-on-dark); }
+    .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    @media (max-width: 720px) { .features { grid-template-columns: 1fr; } }
+    .feature { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 24px 24px 26px; box-shadow: var(--shadow-card); }
+    .feature h3 { font-family: var(--font-display); font-weight: 400; font-size: 19px; letter-spacing: -0.012em; color: var(--fg); margin: 0 0 8px; }
+    .feature p { margin: 0; color: var(--label); font-size: 15px; line-height: 1.5; }
+    .steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 18px; max-width: 64ch; }
+    .steps li { position: relative; padding-left: 30px; color: var(--label); font-size: 16px; }
+    .steps li::before { content: counter(step); counter-increment: step; position: absolute; left: 0; top: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+    .steps { counter-reset: step; }
+    .lead-on-dark { font-size: 18px; line-height: 1.5; color: var(--fg-on-dark); margin: 0 0 10px; max-width: 60ch; }
+    .muted-on-dark { color: var(--muted-on-dark); font-size: 15px; margin: 0; max-width: 60ch; }
+    .contact-cta { display: inline-block; font-size: 16px; color: #fff; background: var(--accent); border: 1px solid var(--accent); border-radius: 4px; padding: 11px 20px; text-decoration: none; box-shadow: var(--shadow-cta); transition: background .15s ease, transform .18s ease; margin-top: 22px; }
+    .contact-cta:hover { background: var(--accent-hover); color: #fff; transform: translateY(-1px); }
+    .site-footer { border-top: 1px solid var(--border); margin-top: 8px; }
+    .site-footer__inner { padding-block: 28px 48px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; }
+    .site-footer p { margin: 0; color: var(--muted); font-size: 13px; }
+    .site-footer nav { display: flex; gap: 22px; }
+    .site-footer nav a { color: var(--muted); font-size: 13px; text-decoration: none; }
+    .site-footer nav a:hover { color: var(--fg); text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="wordmark" href="/" aria-label="Carapace, home">Carapace</a>
+      <a class="header-link" href="mailto:hello@carapace.capital">hello@carapace.capital</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell">
+        <p class="eyebrow">BotOffice · Google Ads</p>
+        <h1>A platform with Google Ads management capabilities.</h1>
+        <p class="hero__deck">BotOffice lets ad managers and agencies manage their own Google Ads accounts and the client accounts they run, all in one place, with a private AI assistant that knows their business and helps them decide what to change.</p>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="capabilities">
+      <div class="shell">
+        <p id="capabilities" class="kicker">What it does with Google Ads</p>
+        <div class="features">
+          <div class="feature">
+            <h3>Performance reporting</h3>
+            <p>See spend, clicks, conversions and cost per conversion across accounts, campaigns, ad groups and keywords, with alerts on what changed.</p>
+          </div>
+          <div class="feature">
+            <h3>Campaign management</h3>
+            <p>Adjust budgets, bids, targeting and the on or off status of campaigns and ads from one place.</p>
+          </div>
+          <div class="feature">
+            <h3>Campaign creation</h3>
+            <p>Set up new Search, Performance Max, Display, Demand Gen and Video campaigns, ad groups, keywords and ads.</p>
+          </div>
+          <div class="feature">
+            <h3>Keyword planning</h3>
+            <p>Get keyword ideas, search volume and forecasts to plan campaigns before they go live.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="how">
+      <div class="shell">
+        <p id="how" class="kicker">How it works</p>
+        <ol class="steps">
+          <li>You connect your Google Ads accounts, or the client accounts you manage, through Google's standard sign-in.</li>
+          <li>BotOffice reads the account's performance data so you and the assistant can see how things are going.</li>
+          <li>The private AI assistant learns your business and suggests budgets, bids, keywords and campaigns to adjust or create.</li>
+          <li>Every change is shown to you and applied only after you confirm it. You stay in control of the account.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="block block--dark" aria-labelledby="agencies">
+      <div class="shell">
+        <p id="agencies" class="kicker kicker--on-dark">For agencies and ad managers</p>
+        <p class="lead-on-dark">Manage every client account under one roof. Client accounts are linked under our manager account, so you can report on and manage them all from BotOffice.</p>
+        <p class="muted-on-dark">We do not resell Google Ads data and we do not use it for competitor research. You can disconnect any account at any time.</p>
+        <a class="contact-cta" href="mailto:hello@carapace.capital">Talk to us about access</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <p>&copy; 2026 Carapace Capital Ltd · BotOffice (<a href="https://botoffice.io" rel="noopener" style="color:var(--muted);">botoffice.io</a>)</p>
+      <nav aria-label="Legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="imprint.html">Imprint</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
